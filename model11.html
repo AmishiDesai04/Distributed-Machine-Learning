@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DML Model 1</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: url('image.jpg') no-repeat center center/cover;
+            color: #fff;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+
+        body::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.6);
+            z-index: 1;
+        }
+
+        .box {
+            background: rgba(20, 20, 20, 0.95);
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 0 20px rgba(255, 152, 0, 0.3);
+            max-width: 900px;
+            width: 90%;
+            position: relative;
+            z-index: 2;
+        }
+
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: #ff9800;
+            color: #ffffff;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(255, 152, 0, 0.5);
+        }
+
+        .back-button {
+            background: #1e1e1e;
+            color: #ffffff;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            font-size: 16px;
+            border-radius: 5px;
+            transition: 0.3s;
+        }
+
+        .back-button:hover {
+            background: #b46f08;
+            color: #000;
+        }
+
+        h2 {
+            border-bottom: 2px solid #ff9800;
+            padding-bottom: 5px;
+        }
+
+        .log-container {
+            background: #1e1e1e;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(255, 152, 0, 0.5);
+            margin-bottom: 20px;
+            margin-top: 20px;
+        }
+
+        .log-content {
+            max-height: 250px;
+            overflow-y: auto;
+            background: #000;
+            color: #0f0;
+            padding: 10px;
+            border-radius: 5px;
+            font-family: monospace;
+            white-space: pre-wrap;
+        }
+
+        .toggle-btn {
+            background: #1e1e1e;
+            color: #ffffff;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            text-align: center;
+            font-size: 18px;
+            font-weight: bold;
+            border-radius: 5px;
+            width: 100%;
+            text-align: left;
+            border-bottom: 2px solid #ff9800;
+            padding-bottom: 5px;
+        }
+       
+    </style>
+</head>
+<body>
+    <div class="box">
+        <div class="header">
+            <button class="back-button" onclick="history.back()">&#8592; Back</button>
+            <h1>DML Model 1 - CNN</h1>
+        </div>
+
+        <div class="log-container">
+            <button class="toggle-btn" onclick="toggleVisibility('phase1')">PHASE 1 - Initialization</button>
+            <div id="phase1" class="log-content">Loading...</div>
+        </div>
+        <div class="log-container">
+            <button class="toggle-btn" onclick="toggleVisibility('phase2')">PHASE 2 - Model Distribution</button>
+            <div id="phase2" class="log-content">Loading...</div>
+        </div>
+        <div class="log-container">
+            <button class="toggle-btn" onclick="toggleVisibility('phase3')">PHASE 3 - Training & Results</button>
+            <div id="phase3" class="log-content">Loading...</div>
+        </div>
+    </div>
+
+    <script>
+        function toggleVisibility(phaseId) {
+            const phaseDiv = document.getElementById(phaseId);
+            phaseDiv.style.display = (phaseDiv.style.display === "none") ? "block" : "none";
+        }
+
+        async function loadLogFile() {
+            try {
+                let response = await fetch('master.txt');
+                let text = await response.text();
+
+                let phase1Logs = "";
+                let phase2Logs = "";
+                let phase3Logs = "";
+
+                let currentPhase = "";
+                let lines = text.split("\n");
+
+                for (let line of lines) {
+                    if (line.includes("PHASE 1")) {
+                        currentPhase = "phase1";
+                    } else if (line.includes("PHASE 2")) {
+                        currentPhase = "phase2";
+                    } else if (line.includes("PHASE 3")) {
+                        currentPhase = "phase3";
+                    }
+
+                    if (currentPhase === "phase1") {
+                        phase1Logs += line + "\n";
+                    } else if (currentPhase === "phase2") {
+                        phase2Logs += line + "\n";
+                    } else if (currentPhase === "phase3") {
+                        phase3Logs += line + "\n";
+                    }
+                }
+
+                document.getElementById("phase1").innerText = phase1Logs.trim() || "No logs available.";
+                document.getElementById("phase2").innerText = phase2Logs.trim() || "No logs available.";
+                document.getElementById("phase3").innerText = phase3Logs.trim() || "No logs available.";
+            } catch (error) {
+                document.getElementById("phase1").innerText = "Error loading logs...";
+                document.getElementById("phase2").innerText = "Error loading logs...";
+                document.getElementById("phase3").innerText = "Error loading logs...";
+            }
+        }
+
+        loadLogFile();
+    </script>
+</body>
+</html>

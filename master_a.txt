@@ -1,0 +1,181 @@
+[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.125.46.236:5000
+[33mPress CTRL+C to quit[0m
+10.125.46.236 - - [08/Apr/2025 14:38:11] "POST /train HTTP/1.1" 200 -
+ads': 8, 'memory_limit': 12670197760, 'last_seen': 1744103281.28469, 'services': {'dashboard': 4912}, 'metrics': {'task_counts': {}, 'bandwidth': {'total': 100000000, 'workers': {}, 'types': {}}, 'digests_total_since_heartbeat': {'tick-duration': 0.5225224494934082, 'latency': 0.01354360580444336}, 'managed_bytes': 0, 'spilled_bytes': {'memory': 0, 'disk': 0}, 'transfer': {'incoming_bytes': 0, 'incoming_count': 0, 'incoming_count_total': 0, 'outgoing_bytes': 0, 'outgoing_count': 0, 'outgoing_count_total': 0}, 'event_loop_interval': 0.02058202025-04-08 14:38:01,441 - INFO - 
+Master Node: Connected to Dask cluster with workers: {'tcp://10.125.46.236:4911': {'type': 'Worker', 'id': 'tcp://10.125.46.236:4911', 'host': '10.125.46.236', 'resources': {}, 'local_directory': 'C:\\Users\\Admin\\AppData\\Local\\Temp\\dask-scratch-space\\worker-cupt0a_l', 'name': 'tcp://10.125.46.236:4911', 'nthreads': 8, 'memory_limit': 12670197760, 'last_seen': 1744103281.28469, 'services': {'dashboard': 4912}, 'metrics': {'task_counts': {}, 'bandwidth': {'total': 100000000, 'workers': {}, 'types': {}}, 'digests_total_since_heartbeat': {'tick-duration': 0.5225224494934082, 'latency': 0.01354360580444336}, 'managed_bytes': 0, 'spilled_bytes': {'memory': 0, 'disk': 0}, 'transfer': {'incoming_bytes': 0, 'incoming_count': 0, 'incoming_count_total': 0, 'outgoing_bytes': 0, 'outgoing_count': 0, 'outgoing_count_total': 0}, 'event_loop_interval': 0.020582028797694614, 'cpu': 3.2, 'memory': 132550656, 'time': 1744103281.2656813, 'host_net_io': {'read_bps': 76434.59407624295, 'write_bps': 3524.07957959785}, 'host_disk_io': {'read_bps': 2856853.8458606573, 'write_bps': 16706.74763661203}}, 'status': 'running', 'nanny': 'tcp://10.125.46.236:4904'}, 'tcp://10.125.46.32:37458': {'type': 'Worker', 'id': 'tcp://10.125.46.32:37458', 'host': '10.125.46.32', 'resources': {}, 'local_directory': 'C:\\Users\\qcc\\AppData\\Local\\Temp\\dask-scratch-space\\worker-58gwjzor', 'name': 'tcp://10.125.46.32:37458', 'nthreads': 4, 'memory_limit': 8464789504, 'last_seen': 1744103281.4242017, 'services': {'dashboard': 37459}, 'metrics': {'task_counts': {}, 'bandwidth': {'total': 100000000, 'workers': {}, 'types': {}}, 'digests_total_since_heartbeat': {'tick-duration': 0.5427231788635254, 'latency': 0.13939976692199707}, 'managed_bytes': 0, 'spilled_bytes': {'memory': 0, 'disk': 0}, 'transfer': {'incoming_bytes': 0, 'incoming_count': 0, 'incoming_count_total': 0, 'outgoing_bytes': 0, 'outgoing_count': 0, 'outgoing_count_total': 0}, 'event_loop_interval': 0.021398738938934948, 'cpu': 0.0, 'memory': 93573120, 'time': 1744103282.018947, 'host_net_io': {'read_bps': 14699.880715192694, 'write_bps': 44695.50729120349}, 'host_disk_io': {'read_bps': 0.0, 'write_bps': 0.0}}, 'status': 'running', 'nanny': 'tcp://10.125.46.32:37453'}, 'tcp://10.125.46.32:37473': {'type': 'Worker', 'id': 'tcp://10.125.46.32:37473', 'host': '10.125.46.32', 'resources': {}, 'local_directory': 'C:\\Users\\qcc\\AppData\\Local\\Temp\\dask-scratch-space\\worker-9p_fvy2025-04-08 14:38:01,446 - INFO - 
+Waiting for Flask app to fully start...
+
+
+2025-04-08 14:38:01,487 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.125.46.236:5000
+
+2025-04-08 14:38:01,487 - INFO - [33mPress CTRL+C to quit[0m
+
+2025-04-08 14:38:06,448 - INFO - 
+Master Node: Triggering training via POST request to http://10.125.46.236:5000/train
+
+
+2025-04-08 14:38:06,463 - INFO - 
+Master Node: Distributing training to 3 workers
+
+
+2025-04-08 14:38:06,470 - INFO - 
+===================================== 
+Master Node: Sent chunk 1 to worker
+
+
+2025-04-08 14:38:06,477 - INFO - 
+===================================== 
+Master Node: Sent chunk 2 to worker
+
+
+2025-04-08 14:38:06,483 - INFO - 
+===================================== 
+Master Node: Sent chunk 3 to worker
+
+
+2025-04-08 14:38:11,152 - INFO - 
+
+ ===================================== 
+Master Node: Model training completed.
+ ===================================== 
+Coefficients: 	 [-0.01283796 -0.55906316 -0.10180791  0.00270151  0.40298555  0.00742253
+  0.02166854  0.06145429 -0.05149568],
+ Intercept: 4.278783382758603
+
+
+2025-04-08 14:38:11,152 - INFO - 
+
+Worker tcp://10.125.46.236:4911: -- Training on chunk 1 with 3667 samples
+
+
+
+2025-04-08 14:38:11,152 - INFO - 
+
+Worker tcp://10.125.46.236:4911: Completed training chunk 1
+
+
+
+2025-04-08 14:38:11,152 - INFO - 
+
+ ===================================== 
+ Worker tcp://10.125.46.236:4911: 
+
+Final model coefficients 	 [-0.01140501 -0.57750084 -0.09527878  0.0026463   0.40346026  0.0073018
+  0.01725295  0.03891349 -0.04656296], 
+Intercept 4.499883683647418
+ ===================================== 
+
+
+
+2025-04-08 14:38:11,152 - INFO - 
+
+Worker tcp://10.125.46.32:37458: -- Training on chunk 1 with 3667 samples
+
+
+
+2025-04-08 14:38:11,152 - INFO - 
+
+Worker tcp://10.125.46.32:37458: Completed training chunk 1
+
+
+
+2025-04-08 14:38:11,156 - INFO - 
+
+ ===================================== 
+ Worker tcp://10.125.46.32:37458: 
+
+Final model coefficients 	 [-0.01169646 -0.54005308 -0.11985719  0.00264736  0.40719268  0.00747602
+  0.01974459  0.06844095 -0.04613892], 
+Intercept 4.134011975418877
+ ===================================== 
+
+
+
+2025-04-08 14:38:11,156 - INFO - 
+
+Worker tcp://10.125.46.32:37473: -- Training on chunk 1 with 3666 samples
+
+
+
+2025-04-08 14:38:11,156 - INFO - 
+
+Worker tcp://10.125.46.32:37473: Completed training chunk 1
+
+
+
+2025-04-08 14:38:11,156 - INFO - 
+
+ ===================================== 
+ Worker tcp://10.125.46.32:37473: 
+
+Final model coefficients 	 [-0.01541242 -0.55963555 -0.09028775  0.00281086  0.39830373  0.00748978
+  0.02800808  0.07700845 -0.06178517], 
+Intercept 4.202454489209513
+ ===================================== 
+
+
+
+2025-04-08 14:38:11,158 - INFO - 10.125.46.236 - - [08/Apr/2025 14:38:11] "POST /train HTTP/1.1" 200 -
+
+2025-04-08 14:38:11,161 - INFO - 
+Master Node: Training triggered successfully.
+
+
+2025-04-08 14:38:11,162 - INFO - 
+Main process continues, Flask app running in background.
+
+
+4736  0.40719268  0.00747602
+  0.01974459  0.06844095 -0.04613892], 
+Intercept 4.134011975418877
+ ===================================== 
+
+
+
+
+2025-04-08 14:38:11,156 - INFO - 
+
+Worker tcp://10.125.46.32:37473: -- Training on chunk 1 with 3666 samples
+
+
+
+
+2025-04-08 14:38:11,156 - INFO - 
+
+Worker tcp://10.125.46.32:37473: Completed training chunk 1
+
+
+
+
+2025-04-08 14:38:11,156 - INFO - 
+
+ ===================================== 
+ Worker tcp://10.125.46.32:37473: 
+
+Final model coefficients 	 [-0.01541242 -0.55963555 -0.09028775  0.00281086  0.39830373  0.00748978
+  0.02800808  0.07700845 -0.06178517], 
+Intercept 4.202454489209513
+ ===================================== 
+
+
+
+
+2025-04-08 14:38:11,158 - INFO - 10.125.46.236 - - [08/Apr/2025 14:38:11] "POST /train HTTP/1.1" 200 -
+
+
+2025-04-08 14:38:11,161 - INFO - 
+Master Node: Training triggered successfully.
+
+
+
+2025-04-08 14:38:11,162 - INFO - 
+Main process continues, Flask app running in background.
+
+
+

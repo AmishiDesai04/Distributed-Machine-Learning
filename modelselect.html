@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Model Selection</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            text-align: center;
+            background: url('image.jpg') no-repeat center center/cover;
+            color: #fff;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            position: relative;
+        }
+        
+        /* Overlay to improve text readability */
+        body::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.6); /* Dark overlay */
+            z-index: 1;
+        }
+
+        .box {
+            background: rgba(20, 20, 20, 0.95);
+            padding: 40px 50px;
+            border-radius: 20px;
+            box-shadow: 0 0 20px rgba(0, 195, 255, 0.2);
+            max-width: 800px;
+            width: 90%;
+            text-align: center;
+            position: relative;
+            z-index: 2;
+        }
+        
+        h1 {
+            font-size: 46px;
+            font-weight: bold;
+            color: #00ff95;
+            text-shadow: 2px 2px 10px rgba(0, 195, 255, 0.8);
+        }
+        
+        h2 {
+            font-size: 24px;
+            color: #f3f2f2;
+        }
+        
+        p {
+            font-size: 16px;
+            color: #d4d4d4;
+            margin-bottom: 0px;
+        }
+        
+        .container {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 50px;
+        }
+        
+        .btn {
+            padding: 15px 35px;
+            font-size: 28px;
+            font-weight: bold;
+            border: none;
+            cursor: pointer;
+            border-radius: 10px;
+            color: white;
+            text-transform: uppercase;
+            transition: 0.3s ease-in-out;
+            box-shadow: 0 0 10px rgba(0, 195, 255, 0.6);
+        }
+        
+        .model1 {
+            background: #ff9800;
+            box-shadow: 0 0 15px #ff9800;
+        }
+        
+        .model2 {
+            background: #007bff;
+            box-shadow: 0 0 15px rgba(0, 123, 255, 0.8);
+        }
+        
+        .btn:hover {
+            transform: scale(1.1);
+            opacity: 0.9;
+            box-shadow: 0 0 25px rgba(255, 255, 255, 0.6);
+        }
+        .rollno{
+            background: rgba(15, 20, 48, 0.95);
+            padding: 10px 20px 20px 10px;
+            border-radius: 20px;
+            box-shadow: 0 0 5px rgba(0, 195, 255, 0.2);
+            max-width: 200px;
+            width: 100%;
+            text-align: center;
+            margin: 20px auto;
+            z-index: 3;
+
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <h1>Distributed Machine Learning</h1>
+        <h2>Distributed Computing PBL</h2>
+        
+        <div class="rollno">
+            <p>C044: Amishi Desai </p>
+            <p>C048: Pratham Vasa </p>
+            <p>C049: Chahel Gupta</p>
+        </div>
+        
+        <div class="container">
+            <button class="btn model1" onclick="redirectTo('model11.html')">Model 1</button>
+            <button class="btn model2" onclick="redirectTo('model2.html')">Model 2</button>
+        </div>
+    </div>
+    <script>
+        function redirectTo(page) {
+            window.location.href = page;
+        }
+    </script>
+</body>
+</html>
